@@ -5,14 +5,45 @@ class Animal:
         self.age: int = 0
 
     def __str__(self) -> str:
-        return f"{self.species}: {self.sound}: {self.age}"
+        return f"{self.species}: {self.age}: {self.sound}"
     
+    def ageBy (self, increment: int):
+        self.age+=increment
+        if self.age >= 4:
+            print(f"warning: {self.species} morreu")
+            self.age=4
 
+    def makeSound (self) -> str:
+        if self.age == 0:
+            return "---"
+        elif self.age == 4:
+            return "RIP"
+        else:
+            return self.sound
 
 def main():
-    animal: Animal = Animal("","")
+    animal = Animal("","")
     while True:
         line: str = input()
-        print("$" + line)
-        args: list[str]
-    
+        print(f"$" + line)
+        args: list[str] = line.split(" ")
+
+        if args[0] == "init":
+            species=args[1]
+            sound=args[2]
+            animal = Animal(species, sound)
+
+        elif args[0] == "show":
+            print(animal)
+
+        elif args[0] == "end":
+            break
+        
+        elif args[0] == "grow":
+            n=int (args[1])
+            animal.ageBy(n)
+
+        elif args[0] == "noise":
+            print(animal.makeSound())
+
+main ()
