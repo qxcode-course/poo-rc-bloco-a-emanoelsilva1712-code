@@ -5,7 +5,7 @@ class Animal:
         self.age: int = 0
 
     def __str__(self) -> str:
-        return f"{self.species}: {self.age}: {self.sound}"
+        return f"{self.species}:{self.age}:{self.sound}"
     
     def ageBy (self, increment: int):
         self.age+=increment

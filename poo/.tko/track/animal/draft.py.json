@@ -192,7 +192,17 @@
         },
         {
             "label": "2025-09-25_17-40-45",
-            "content": "class Animal:\n    def __init__(self, species: str, sound: str):\n        self.species: str = species\n        self.sound: str = sound\n        self.age: int = 0\n\n    def __str__(self) -> str:\n        return f\"{self.species}: {self.age}: {self.sound}\"\n    \n    def ageBy (self, increment: int):\n        self.age+=increment\n        if self.age >= 4:\n            print(f\"warning: {self.species} morreu\")\n            self.age=4\n\n    def makeSound (self) -> str:\n        if self.age == 0:\n            return \"---\"\n        elif self.age == 4:\n            return \"RIP\"\n        else:\n            return self.sound\n\ndef main():\n    animal = Animal(\"\",\"\")\n    while True:\n        line: str = input()\n        print(f\"$\" + line)\n        args: list[str] = line.split(\" \")\n\n        if args[0] == \"init\":\n            species=args[1]\n            sound=args[2]\n            animal = Animal(species, sound)\n\n        elif args[0] == \"show\":\n            print(animal)\n\n        elif args[0] == \"end\":\n            break\n        \n        elif args[0] == \"grow\":\n            n=int (args[1])\n            animal.ageBy(n)\n\n        elif args[0] == \"noise\":\n            print(animal.makeSound())\n\nmain ()",
+            "content": "@@ -173,16 +173,17 @@\n __(self)\n+ \n -%3E str:%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2025-09-27_02-38-16",
+            "content": "@@ -169,25 +169,24 @@\n _str__(self)\n- \n -%3E str:%0A    \n@@ -213,16 +213,17 @@\n pecies%7D:\n+ \n %7Bself.ag\n@@ -225,16 +225,17 @@\n lf.age%7D:\n+ \n %7Bself.so\n",
+            "lines": "49"
+        },
+        {
+            "label": "2025-09-27_02-51-41",
+            "content": "class Animal:\n    def __init__(self, species: str, sound: str):\n        self.species: str = species\n        self.sound: str = sound\n        self.age: int = 0\n\n    def __str__(self) -> str:\n        return f\"{self.species}:{self.age}:{self.sound}\"\n    \n    def ageBy (self, increment: int):\n        self.age+=increment\n        if self.age >= 4:\n            print(f\"warning: {self.species} morreu\")\n            self.age=4\n\n    def makeSound (self) -> str:\n        if self.age == 0:\n            return \"---\"\n        elif self.age == 4:\n            return \"RIP\"\n        else:\n            return self.sound\n\ndef main():\n    animal = Animal(\"\",\"\")\n    while True:\n        line: str = input()\n        print(f\"$\" + line)\n        args: list[str] = line.split(\" \")\n\n        if args[0] == \"init\":\n            species=args[1]\n            sound=args[2]\n            animal = Animal(species, sound)\n\n        elif args[0] == \"show\":\n            print(animal)\n\n        elif args[0] == \"end\":\n            break\n        \n        elif args[0] == \"grow\":\n            n=int (args[1])\n            animal.ageBy(n)\n\n        elif args[0] == \"noise\":\n            print(animal.makeSound())\n\nmain ()",
             "lines": "49"
         }
     ]
