@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-09-28_00-23-01",
+            "content": "@@ -1,229 +0,0 @@\n-class Carro:%0A    def __init__(self, passMax: int, gasMax: int): %0A        self.passageiros: int = passageiros%0A        self.passMax: int = passMax%0A        self.gasMax: int = gasMax%0A        self.gas: int = 0%0A        self.km: int = 0\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-09-28_01-20-21",
+            "content": "class Carro:\n    def __init__(self, passMax: int, gasMax: int): \n        self.passageiros: int = passageiros\n        self.passMax: int = passMax\n        self.gasMax: int = gasMax\n        self.gas: int = 0\n        self.km: int = 0",
+            "lines": "7"
+        }
+    ]
+}
