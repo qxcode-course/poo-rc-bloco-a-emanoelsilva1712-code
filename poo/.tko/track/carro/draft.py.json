@@ -7,8 +7,58 @@
         },
         {
             "label": "2025-09-28_01-20-21",
-            "content": "class Carro:\n    def __init__(self, passMax: int, gasMax: int): \n        self.passageiros: int = passageiros\n        self.passMax: int = passMax\n        self.gasMax: int = gasMax\n        self.gas: int = 0\n        self.km: int = 0",
+            "content": "@@ -37,22 +37,32 @@\n pass\n-ageiros\n+Max: int, gasMax\n : int):\n+ \n %0A   \n@@ -134,9 +134,15 @@\n t = \n-2\n+passMax\n %0A   \n@@ -169,11 +169,14 @@\n t = \n-100\n+gasMax\n %0A   \n@@ -226,140 +226,4 @@\n  = 0\n- %0A%0A    def __str__(self) -%3E str:%0A        return %22pass:%7Bpass%7D, gas:%7Bgas%7D, km:%7Bkm%7D%22%0A        %0A        %0Adef main():%0A    Carro = Carro(%22%22,%22%22)\n",
             "lines": "7"
+        },
+        {
+            "label": "2025-09-30_13-47-46",
+            "content": "@@ -298,175 +298,8 @@\n    %0A\n-    def enter (self):%0A        if self.passageiros %3E= self.passMax:%0A            print(%22fail: limite de pessoas atingido%22)%0A        else:%0A            self.passageiros+=1%0A\n     \n@@ -315,25 +315,25 @@\n main():%0A    \n-c\n+C\n arro = Carro\n@@ -343,241 +343,4 @@\n ,%22%22)\n-%0A    while True:%0A        line: str = input()%0A        print(f%22$%22 + line)%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22show%22:%0A            print(carro)%0A%0A        elif args%5B0%5D == %22enter%22:%0A            carro.enter()%0A%0Amain()\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-09-30_14-37-34",
+            "content": "@@ -464,162 +464,8 @@\n s+=1\n-%0A%0A    def leave (self):%0A        if self.passageiros == 0:%0A            print(%22fail: nao ha ninguem no carro%22)%0A        else:%0A            self.passageiros-=1\n %0A   \n@@ -741,68 +741,8 @@\n ()%0A%0A\n-        elif args%5B0%5D == %22leave%22:%0A            carro.leave()%0A%0A\n main\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-09-30_14-51-53",
+            "content": "@@ -654,17 +654,21 @@\n = Carro(\n-0\n+%22%22,%22%22\n )%0A    wh\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-52-37",
+            "content": "@@ -258,21 +258,16 @@\n  %22pass:%7B\n-self.\n pass%7D, g\n@@ -270,21 +270,16 @@\n %7D, gas:%7B\n-self.\n gas%7D, km\n@@ -280,21 +280,16 @@\n s%7D, km:%7B\n-self.\n km%7D%22%0A   \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-53-08",
+            "content": "@@ -251,17 +251,16 @@\n  return \n-f\n %22pass:%7Bs\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-53-23",
+            "content": "@@ -268,23 +268,16 @@\n elf.pass\n-ageiros\n %7D, gas:%7B\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-53-50",
+            "content": "@@ -258,17 +258,16 @@\n  f%22pass:\n- \n %7Bself.pa\n@@ -282,17 +282,16 @@\n s%7D, gas:\n- \n %7Bself.ga\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-54-45",
+            "content": "@@ -299,17 +299,16 @@\n as%7D, km:\n- \n %7Bself.km\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-54-53",
+            "content": "@@ -975,57 +975,8 @@\n ve()\n-%0A        elif args%5B0%5D == %22end%22:%0A            break\n %0A%0Ama\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-09-30_14-55-48",
+            "content": "class Carro:\n    def __init__(self, passageiros: int):\n        self.passageiros: int = passageiros\n        self.passMax: int = 2\n        self.gasMax: int = 100\n        self.gas: int = 0\n        self.km: int = 0 \n\n    def __str__(self) -> str:\n        return f\"pass: {self.passageiros}, gas: {self.gas}, km: {self.km}\"\n        \n    def enter (self):\n        if self.passageiros >= self.passMax:\n            print(\"fail: limite de pessoas atingido\")\n        else:\n            self.passageiros+=1\n\n    def leave (self):\n        if self.passageiros == 0:\n            print(\"fail: nao ha ninguem no carro\")\n        else:\n            self.passageiros-=1\n        \ndef main():\n    carro = Carro(0)\n    while True:\n        line: str = input()\n        print(f\"$\" + line)\n        args: list[str] = line.split(\" \")\n\n        if args[0] == \"show\":\n            print(carro)\n\n        elif args[0] == \"enter\":\n            carro.enter()\n\n        elif args[0] == \"leave\":\n            carro.leave()\n        elif args[0] == \"end\":\n            break\n\nmain()",
+            "lines": "42"
         }
     ]
 }
