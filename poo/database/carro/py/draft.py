@@ -20,6 +20,24 @@ class Carro:
             print("fail: nao ha ninguem no carro")
         else:
             self.passageiros-=1
+
+    def fuel (self, increment: int):
+        self.gas+=increment
+        if self.gas > 100:
+            self.gas = 100
+            
+    def drive (self, distance):
+        if self.passageiros == 0:
+            print(f"fail: nao ha ninguem no carro")
+        elif self.gas == 0:
+            print(f"fail: tanque vazio")
+        elif self.gas < distance:
+            print(f"fail: tanque vazio apos andar {distance} km")
+            self.km+=self.gas
+            self.gas=0
+        else:
+            self.km+=distance
+            self.gas-=distance
         
 def main():
     carro = Carro(0)
@@ -38,5 +56,13 @@ def main():
             carro.leave()
         elif args[0] == "end":
             break
+
+        elif args[0] == "fuel":
+            increment = int(args[1])
+            carro.fuel(increment)
+
+        elif args[0] == "drive":
+            increment = int(args[1])
+            carro.drive(increment)
 
 main()
