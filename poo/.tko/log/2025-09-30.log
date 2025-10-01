@@ -44,3 +44,8 @@
 2025-09-30 19:48:46, EXEC, v:1, k:carro, mode:FULL, rate:80, size:68
 2025-09-30 19:49:00, EXEC, v:1, k:carro, mode:FULL, rate:80, size:68
 2025-09-30 19:49:13, EXEC, v:1, k:carro, mode:FULL, rate:80, size:68
+2025-09-30 20:54:45, MOVE, v:1, k:carro, mode:PICK
+2025-09-30 20:54:47, EXEC, v:1, k:carro, mode:FULL, rate:80
+2025-09-30 20:57:30, MOVE, v:1, k:carro, mode:PICK
+2025-09-30 20:57:32, EXEC, v:1, k:carro, mode:FULL, rate:80, size:68
+2025-09-30 21:03:57, EXEC, v:1, k:carro, mode:FULL, rate:100, size:68

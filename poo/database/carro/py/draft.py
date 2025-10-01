@@ -26,13 +26,13 @@ class Carro:
         if self.gas > 100:
             self.gas = 100
             
-    def drive (self, distance):
+    def drive (self, distance: int):
         if self.passageiros == 0:
             print(f"fail: nao ha ninguem no carro")
         elif self.gas == 0:
             print(f"fail: tanque vazio")
         elif self.gas < distance:
-            print(f"fail: tanque vazio apos andar {distance} km")
+            print(f"fail: tanque vazio apos andar {self.gas} km")
             self.km+=self.gas
             self.gas=0
         else:
