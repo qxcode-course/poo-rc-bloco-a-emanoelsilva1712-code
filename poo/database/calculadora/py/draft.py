@@ -1,47 +1,63 @@
-class Calc:
+class Calculator:
     def __init__(self, batteryMax: int):
         self.display: int = 0
         self.battery: int = 0
         self.batteryMax: int = batteryMax
 
     def __str__(self) -> str:
-        return f"display: {self.display:.2f}, battery: {self.battery}"
+        return f"display = {self.display:.2f}, battery = {self.battery}"
     
-    def charge (self, increment: int):
+    def recarregar(self, increment: int):
         self.battery+=increment
-        if self.battery > self.batteryMax:
+        if self.battery >= self.batteryMax:
+            self.battery=self.batteryMax
 
-    def sum (self):
+    def somar(self, a:int, b:int):
         if self.battery == 0:
             print("fail: bateria insuficiente")
         else:
-            
-    def div (self):
-        if self.battery == 0:
-            print("fail: bateria insuficiente")
-        elif div == 0:
-            print("fail: divisao por zero")
-        else:
-            
+            self.display= a+b
+            self.battery-=1
         
+    def divisao(self, num: float, den:float):
+        if self.battery == 0:
+            print("fail: bateria insuficiente")
+        elif den==0:
+            print("fail: divisao por zero")
+            self.battery-=1        
+        else:
+            self.display = num/den
+            self.battery -= 1
+
 def main():
-    calc = Calc()
+    calculator = Calculator(0)
     while True:
-        line: str = input()
-        print(f"$" + line)
-        args: list[str] = line.split(" ")
+        line = input()
+        print(f"${line}")
+        args= line.split()
 
-        if args[0] == "show":
-            print(calc)
+        if args[0] == "end":
+            break
 
-        if args[0] == "charge":
+        elif args[0] == "init":
             increment = int(args[1])
-            calc.charge(increment)
+            calculator=Calculator(increment)
 
-        if args[0] == "sum":
-            calc.sum()
+        elif args[0] == "show":
+            print(calculator)
+        
+        elif args[0] == "charge":
+            increment = int(args[1])
+            calculator.recarregar(increment)
+        
+        elif args[0] == "sum":
+            a = int(args[1])
+            b = int(args[2])
+            calculator.somar(a, b)
 
-        if args[0] == "div":
-            calc.div()
+        elif args[0] == "div":
+            a = float(args[1])
+            b = float(args[2])
+            calculator.divisao(a, b)
 
-main ()
+main()
