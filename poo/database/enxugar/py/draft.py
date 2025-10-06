@@ -7,10 +7,11 @@ class Towel:
     def dry(self, amount: int) -> None:
         self.wetness += amount
         if self.wetness >= self.isMaxWetness():
-            self.wetness = self.isMaxWetness() 
+            self.wetness = self.isMaxWetness()
             print("toalha encharcada")
-    def isDry (self):
-        return self.wetness == 0 
+
+    def isDry(self):
+        return self.wetness == 0
 
     def wringOut(self):
         self.wetness = 0
@@ -32,7 +33,7 @@ def main():
     while True: # 3: loop infinito
 
         line: str = input() # 4: perguntar ao usuario
-        print ("$" + line)
+        print("$" + line) # echo
         args: list[str] = line.split(" ") # 5: separar argumentos
 
         if args[0] == "end":
@@ -41,16 +42,13 @@ def main():
             color: str = args[1]
             size: str = args[2]
             towel = Towel(color, size)
+        elif args[0] == "seca":
+            print("sim" if towel.isDry() else "nao")
+        elif args[0] == "torcer":
+            towel.wringOut()
         elif args[0] == "enxugar":
-
             amount: int = int(args[1])
             towel.dry(amount)
-
-        elif args[0] == "seca":
-            if(towel.isDry()):
-                print("sim")
-            else:
-                print("nao")
         elif args[0] == "mostrar":
             print(towel)
         else: # 7: erro
